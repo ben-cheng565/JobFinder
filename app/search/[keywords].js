@@ -1,10 +1,11 @@
-import { SafeAreaView, Text, FlatList, ActivityIndicator } from "react-native";
+import { SafeAreaView, FlatList } from "react-native";
 import { Stack, useRouter, useSearchParams } from "expo-router";
 
 import { COLORS, ICONS, SIZES } from "../../constants";
 import useFetch from "../../hook/useFetch";
 import { NearbyJobCard, ScreenHeaderBtn } from "../../components";
-import styles from "../../styles/search";
+import Spinner from "../../components/common/Spinner";
+import Error from "../../components/common/Error";
 
 const JobSearch = () => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const JobSearch = () => {
             <ScreenHeaderBtn
               iconUrl={ICONS.left}
               size="60%"
-              handleClick={() => router.back()}
+              handlePress={() => router.back()}
             />
           ),
           headerTitle: "",
@@ -32,18 +33,13 @@ const JobSearch = () => {
       />
 
       {loading ? (
-        <ActivityIndicator size="large" color={COLORS.primary} />
+        <Spinner />
       ) : error ? (
-        <Text style={styles.errorText}>Something went wrong</Text>
+        <Error />
       ) : (
         <FlatList
           data={data}
-          renderItem={({ item }) => (
-            <NearbyJobCard
-              job={item}
-              handleNavigate={() => router.push(`/job-details/${item.job_id}`)}
-            />
-          )}
+          renderItem={({ item }) => <NearbyJobCard job={item} />}
           keyExtractor={(item) => item.job_id}
           contentContainerStyle={{
             padding: SIZES.medium,

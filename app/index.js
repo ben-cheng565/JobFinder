@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, ScrollView, SafeAreaView, Text } from "react-native";
+import { View, ScrollView, SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
 
 import { COLORS, ICONS, IMAGES, SIZES } from "../constants";
@@ -9,10 +9,17 @@ import {
   ScreenHeaderBtn,
   Welcome,
 } from "../components";
+import useFetch from "../hook/useFetch";
+import Spinner from "../components/common/Spinner";
+import Error from "../components/common/Error";
 
 const Home = () => {
-  const router = useRouter();
   const [searchWord, setSearchWord] = useState("");
+
+  const { data, loading, error } = useFetch("search", {
+    query: "React Native",
+    num_pages: 1,
+  });
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -30,15 +37,18 @@ const Home = () => {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, padding: SIZES.medium }}>
-          <Welcome
-            searchTerm={searchWord}
-            setSearchTerm={setSearchWord}
-            handleClick={() => {
-              if (searchWord) router.push(`/search/${searchWord}`);
-            }}
-          />
-          <Popularjobs />
-          <Nearbyjobs />
+          <Welcome searchTerm={searchWord} setSearchTerm={setSearchWord} />
+
+          {loading ? (
+            <Spinner />
+          ) : error ? (
+            <Error />
+          ) : (
+            <>
+              <Popularjobs jobs={data} />
+              <Nearbyjobs jobs={data} />
+            </>
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>
