@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 
 import styles from "./popularjobs.style";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 
 const Popularjobs = ({ jobs }) => {
-  const router = useRouter();
   const [selectedJob, setSelectedJob] = useState();
 
   return (
@@ -26,7 +24,7 @@ const Popularjobs = ({ jobs }) => {
             <PopularJobCard
               item={item}
               selectedJob={selectedJob}
-              onPress={() => router.push(`/job/${item}`)}
+              setSelectedJob={setSelectedJob}
             />
           )}
           keyExtractor={(item) => item?.job_id}
