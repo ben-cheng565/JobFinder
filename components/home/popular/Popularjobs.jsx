@@ -18,7 +18,7 @@ const Popularjobs = () => {
   const [selectedJob, setSelectedJob] = useState();
 
   const { data, loading, error } = useFetch("search", {
-    query: "React software",
+    query: "React developer",
     num_pages: 1,
   });
 
@@ -35,7 +35,7 @@ const Popularjobs = () => {
         {loading ? (
           <ActivityIndicator size="large" color={COLORS.primary} />
         ) : error ? (
-          <Text style={styles.errorText}>fadsfs</Text>
+          <Text style={styles.errorText}>Something went wrong</Text>
         ) : (
           <FlatList
             data={data}
@@ -48,7 +48,7 @@ const Popularjobs = () => {
               />
             )}
             keyExtractor={(item) => item?.job_id}
-            showsHorizontalScrollIndicator={false}
+            showsHorizontalScrollIndicator={true}
           />
         )}
       </View>
