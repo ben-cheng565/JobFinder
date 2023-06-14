@@ -1,7 +1,8 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 
-import styles from "src/components/home/nearby/nearbyjobs.style";
-import NearbyJobCard from "src/components/common/cards/nearby/NearbyJobCard";
+import styles from 'src/components/home/nearby/nearbyjobs.style';
+import NearbyJobCard from 'src/components/common/cards/nearby/NearbyJobCard';
 
 const Nearbyjobs = ({ jobs }) => {
   return (

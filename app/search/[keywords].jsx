@@ -1,15 +1,16 @@
-import { SafeAreaView, FlatList } from "react-native";
-import { Stack, useRouter, useSearchParams } from "expo-router";
+import React from 'react';
+import { SafeAreaView, FlatList } from 'react-native';
+import { Stack, useRouter, useSearchParams } from 'expo-router';
 
-import useFetch from "src/hook/useFetch";
-import { COLORS, ICONS, SIZES } from "src/constants";
-import { NearbyJobCard, ScreenHeaderBtn, Spinner, Error } from "src/components";
+import useFetch from 'src/hook/useFetch';
+import { COLORS, ICONS, SIZES } from 'src/constants';
+import { NearbyJobCard, ScreenHeaderBtn, Spinner, Error } from 'src/components';
 
 const JobSearch = () => {
   const router = useRouter();
   const params = useSearchParams();
 
-  const { data, loading, error } = useFetch("search", {
+  const { data, loading, error } = useFetch('search', {
     query: params.keywords,
   });
 
@@ -26,7 +27,7 @@ const JobSearch = () => {
               handlePress={() => router.back()}
             />
           ),
-          headerTitle: "",
+          headerTitle: '',
         }}
       />
 

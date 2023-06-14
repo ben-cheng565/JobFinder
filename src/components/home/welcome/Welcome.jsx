@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -6,13 +6,13 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
-} from "react-native";
-import { useRouter } from "expo-router";
+} from 'react-native';
+import { useRouter } from 'expo-router';
 
-import styles from "src/components/home/welcome/welcome.style";
-import { ICONS, SIZES } from "src/constants";
+import styles from 'src/components/home/welcome/welcome.style';
+import { ICONS, SIZES } from 'src/constants';
 
-const jobTypes = ["Full-time", "Part-time", "Contractor"];
+const jobTypes = ['Full-time', 'Part-time', 'Contractor'];
 
 const Welcome = ({ searchTerm, setSearchTerm }) => {
   const router = useRouter();
@@ -58,8 +58,7 @@ const Welcome = ({ searchTerm, setSearchTerm }) => {
               onPress={() => {
                 setActiveJobType(item);
                 router.push(`/search/${item}`);
-              }}
-            >
+              }}>
               <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
           )}

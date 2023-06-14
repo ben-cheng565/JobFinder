@@ -1,15 +1,14 @@
-import React from "react";
-import { TouchableOpacity, FlatList, Text, View } from "react-native";
+import React from 'react';
+import { TouchableOpacity, FlatList, Text, View } from 'react-native';
 
-import styles from "src/components/jobdetails/tabs/tabs.style";
-import { SIZES } from "src/constants";
+import styles from 'src/components/jobdetails/tabs/tabs.style';
+import { SIZES } from 'src/constants';
 
 function TabButton({ name, activeTab, onHandleSearchType }) {
   return (
     <TouchableOpacity
       style={styles.btn(name, activeTab)}
-      onPress={onHandleSearchType}
-    >
+      onPress={onHandleSearchType}>
       <Text style={styles.btnText(name, activeTab)}>{name}</Text>
     </TouchableOpacity>
   );

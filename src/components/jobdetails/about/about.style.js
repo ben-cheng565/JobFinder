@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
-import { COLORS, FONT, SIZES } from "src/constants";
+import { COLORS, FONT, SIZES } from 'src/constants';
 
 const styles = StyleSheet.create({
   container: {
     marginTop: SIZES.large,
-    backgroundColor: "#FFF",
+    backgroundColor: '#FFF',
     borderRadius: SIZES.medium,
     padding: SIZES.medium,
   },
