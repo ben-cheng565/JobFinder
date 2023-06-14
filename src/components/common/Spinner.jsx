@@ -1,5 +1,5 @@
 import { ActivityIndicator, Text, View } from "react-native";
-import { COLORS } from "constants";
+import { COLORS } from "src/constants";
 
 const Spinner = () => {
   return (

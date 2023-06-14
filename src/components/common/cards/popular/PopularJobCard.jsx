@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useRouter } from "expo-router";
 
-import { checkImageURL } from "utils";
-import styles from "components/common/cards/popular/popularjobcard.style";
+import { checkImageURL } from "src/utils";
+import styles from "src/components/common/cards/popular/popularjobcard.style";
 
 const PopularJobCard = ({ item, selectedJob, setSelectedJob }) => {
   const router = useRouter();

@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useRouter } from "expo-router";
 
-import { checkImageURL } from "utils";
-import styles from "components/common/cards/nearby/nearbyjobcard.style";
+import { checkImageURL } from "src/utils";
+import styles from "src/components/common/cards/nearby/nearbyjobcard.style";
 
 const NearbyJobCard = ({ job }) => {
   const router = useRouter();

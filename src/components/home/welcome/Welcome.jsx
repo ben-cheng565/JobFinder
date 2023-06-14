@@ -9,8 +9,8 @@ import {
 } from "react-native";
 import { useRouter } from "expo-router";
 
-import styles from "components/home/welcome/welcome.style";
-import { ICONS, SIZES } from "constants";
+import styles from "src/components/home/welcome/welcome.style";
+import { ICONS, SIZES } from "src/constants";
 
 const jobTypes = ["Full-time", "Part-time", "Contractor"];
 

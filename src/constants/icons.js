@@ -1,13 +1,13 @@
-import heart from "assets/icons/heart.png";
-import menu from "assets/icons/menu.png";
-import search from "assets/icons/search.png";
-import filter from "assets/icons/filter.png";
-import left from "assets/icons/left.png";
-import heartOutline from "assets/icons/heart-ol.png";
-import share from "assets/icons/share.png";
-import location from "assets/icons/location.png";
-import chevronLeft from "assets/icons/chevron-left.png";
-import chevronRight from "assets/icons/chevron-right.png";
+import heart from "src/assets/icons/heart.png";
+import menu from "src/assets/icons/menu.png";
+import search from "src/assets/icons/search.png";
+import filter from "src/assets/icons/filter.png";
+import left from "src/assets/icons/left.png";
+import heartOutline from "src/assets/icons/heart-ol.png";
+import share from "src/assets/icons/share.png";
+import location from "src/assets/icons/location.png";
+import chevronLeft from "src/assets/icons/chevron-left.png";
+import chevronRight from "src/assets/icons/chevron-right.png";
 
 export default {
   heart,

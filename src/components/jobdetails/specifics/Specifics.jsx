@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 
-import styles from "components/jobdetails/specifics/specifics.style";
+import styles from "src/components/jobdetails/specifics/specifics.style";
 
 const Specifics = ({ title, points }) => {
   return (

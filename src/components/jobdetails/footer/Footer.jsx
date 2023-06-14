@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { View, Text, TouchableOpacity, Image, Linking } from "react-native";
 
-import styles from "components/jobdetails/footer/footer.style";
-import { ICONS } from "constants";
+import styles from "src/components/jobdetails/footer/footer.style";
+import { ICONS } from "src/constants";
 
 const Footer = ({ url }) => {
   const [liked, setLiked] = useState(false);

@@ -15,6 +15,9 @@ import Specifics from "./jobdetails/specifics/Specifics";
 // common
 import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
 
+import Spinner from "./common/Spinner";
+import Error from "./common/Error";
+
 export {
   ScreenHeaderBtn,
   Welcome,
@@ -25,5 +28,7 @@ export {
   JobAbout,
   JobFooter,
   Specifics,
-  NearbyJobCard
+  NearbyJobCard,
+  Spinner,
+  Error,
 };

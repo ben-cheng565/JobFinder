@@ -2,11 +2,16 @@ import { useState } from "react";
 import { View, ScrollView, SafeAreaView } from "react-native";
 import { Stack } from "expo-router";
 
-import { COLORS, ICONS, IMAGES, SIZES } from "constants";
-import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome } from "components";
-import useFetch from "hook/useFetch";
-import Spinner from "components/common/Spinner";
-import Error from "components/common/Error";
+import { COLORS, ICONS, SIZES, IMAGES } from "src/constants";
+import {
+  Nearbyjobs,
+  Popularjobs,
+  ScreenHeaderBtn,
+  Welcome,
+  Spinner,
+  Error,
+} from "src/components";
+import useFetch from "src/hook/useFetch";
 
 const Home = () => {
   const [searchWord, setSearchWord] = useState("");
