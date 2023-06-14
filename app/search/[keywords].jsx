@@ -1,11 +1,9 @@
 import { SafeAreaView, FlatList } from "react-native";
 import { Stack, useRouter, useSearchParams } from "expo-router";
 
-import { COLORS, ICONS, SIZES } from "../../constants";
-import useFetch from "../../hook/useFetch";
-import { NearbyJobCard, ScreenHeaderBtn } from "../../components";
-import Spinner from "../../components/common/Spinner";
-import Error from "../../components/common/Error";
+import useFetch from "src/hook/useFetch";
+import { COLORS, ICONS, SIZES } from "src/constants";
+import { NearbyJobCard, ScreenHeaderBtn, Spinner, Error } from "src/components";
 
 const JobSearch = () => {
   const router = useRouter();

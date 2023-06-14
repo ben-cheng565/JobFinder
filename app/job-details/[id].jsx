@@ -1,24 +1,19 @@
 import { useCallback, useState } from "react";
-import {
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  ActivityIndicator,
-  RefreshControl,
-} from "react-native";
+import { View, SafeAreaView, ScrollView, RefreshControl } from "react-native";
 import { Stack, useRouter, useSearchParams } from "expo-router";
 
 import {
   Company,
+  Error,
   JobAbout,
   JobFooter,
   JobTabs,
   ScreenHeaderBtn,
   Specifics,
-} from "../../components";
-import { COLORS, ICONS, SIZES } from "../../constants";
-import useFetch from "../../hook/useFetch";
+  Spinner,
+} from "src/components";
+import { COLORS, ICONS, SIZES } from "src/constants";
+import useFetch from "src/hook/useFetch";
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
@@ -91,9 +86,9 @@ const JobDetails = () => {
         }
       >
         {loading ? (
-          <ActivityIndicator size="large" color={COLORS.primary} />
+          <Spinner />
         ) : error ? (
-          <Text style={styles.errorText}>Something went wrong</Text>
+          <Error />
         ) : (
           <View style={{ flex: 1, padding: SIZES.medium }}>
             <Company
