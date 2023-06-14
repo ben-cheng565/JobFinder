@@ -1,6 +1,7 @@
-import { useCallback, useState } from "react";
-import { View, SafeAreaView, ScrollView, RefreshControl } from "react-native";
-import { Stack, useRouter, useSearchParams } from "expo-router";
+import React from 'react';
+import { useCallback, useState } from 'react';
+import { View, SafeAreaView, ScrollView, RefreshControl } from 'react-native';
+import { Stack, useRouter, useSearchParams } from 'expo-router';
 
 import {
   Company,
@@ -11,11 +12,11 @@ import {
   ScreenHeaderBtn,
   Specifics,
   Spinner,
-} from "src/components";
-import { COLORS, ICONS, SIZES } from "src/constants";
-import useFetch from "src/hook/useFetch";
+} from 'src/components';
+import { COLORS, ICONS, SIZES } from 'src/constants';
+import useFetch from 'src/hook/useFetch';
 
-const tabs = ["About", "Qualifications", "Responsibilities"];
+const tabs = ['About', 'Qualifications', 'Responsibilities'];
 
 const JobDetails = () => {
   const router = useRouter();
@@ -23,7 +24,7 @@ const JobDetails = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  const { data, loading, error, refetch } = useFetch("job-details", {
+  const { data, loading, error, refetch } = useFetch('job-details', {
     job_id: params.id,
   });
 
@@ -31,26 +32,26 @@ const JobDetails = () => {
     setRefreshing(true);
     refetch();
     setRefreshing(false);
-  }, []);
+  }, [refetch]);
 
   const displayTabContent = () => {
     switch (activeTab) {
-      case "About":
+      case 'About':
         return (
-          <JobAbout info={data[0]?.job_description ?? "No data provided"} />
+          <JobAbout info={data[0]?.job_description ?? 'No data provided'} />
         );
-      case "Qualifications":
+      case 'Qualifications':
         return (
           <Specifics
             title="Qualifications"
-            points={data[0]?.job_highlights?.Qualifications ?? ["N/A"]}
+            points={data[0]?.job_highlights?.Qualifications ?? ['N/A']}
           />
         );
-      case "Responsibilities":
+      case 'Responsibilities':
         return (
           <Specifics
             title="Responsibilities"
-            points={data[0]?.job_highlights?.Responsibilities ?? ["N/A"]}
+            points={data[0]?.job_highlights?.Responsibilities ?? ['N/A']}
           />
         );
       default:
@@ -75,7 +76,7 @@ const JobDetails = () => {
           headerRight: () => (
             <ScreenHeaderBtn iconUrl={ICONS.share} size="60%" />
           ),
-          headerTitle: "",
+          headerTitle: '',
         }}
       />
 
@@ -83,8 +84,7 @@ const JobDetails = () => {
         showsVerticalScrollIndicator={false}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-      >
+        }>
         {loading ? (
           <Spinner />
         ) : error ? (

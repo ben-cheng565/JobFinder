@@ -1,8 +1,9 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import { useRouter } from "expo-router";
+import React from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { useRouter } from 'expo-router';
 
-import { checkImageURL } from "src/utils";
-import styles from "src/components/common/cards/nearby/nearbyjobcard.style";
+import { checkImageURL } from 'src/utils';
+import styles from 'src/components/common/cards/nearby/nearbyjobcard.style';
 
 const NearbyJobCard = ({ job }) => {
   const router = useRouter();
@@ -18,7 +19,7 @@ const NearbyJobCard = ({ job }) => {
           source={{
             uri: checkImageURL(job.employer_logo)
               ? job.employer_logo
-              : "https://t4.ftcdn.net/jpg/05/05/61/73/360_F_505617309_NN1CW7diNmGXJfMicpY9eXHKV4sqzO5H.jpg",
+              : 'https://t4.ftcdn.net/jpg/05/05/61/73/360_F_505617309_NN1CW7diNmGXJfMicpY9eXHKV4sqzO5H.jpg',
           }}
           resizeMode="contain"
           style={styles.logoImage}

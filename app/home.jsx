@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { View, ScrollView, SafeAreaView } from "react-native";
-import { Stack } from "expo-router";
+import React, { useState } from 'react';
+import { View, ScrollView, SafeAreaView } from 'react-native';
+import { Stack } from 'expo-router';
 
-import { COLORS, ICONS, SIZES, IMAGES } from "src/constants";
+import { COLORS, ICONS, SIZES, IMAGES } from 'src/constants';
 import {
   Nearbyjobs,
   Popularjobs,
@@ -10,14 +10,14 @@ import {
   Welcome,
   Spinner,
   Error,
-} from "src/components";
-import useFetch from "src/hook/useFetch";
+} from 'src/components';
+import useFetch from 'src/hook/useFetch';
 
 const Home = () => {
-  const [searchWord, setSearchWord] = useState("");
+  const [searchWord, setSearchWord] = useState('');
 
-  const { data, loading, error } = useFetch("search", {
-    query: "React Native",
+  const { data, loading, error } = useFetch('search', {
+    query: 'React Native',
     num_pages: 1,
   });
 
@@ -31,7 +31,7 @@ const Home = () => {
           headerRight: () => (
             <ScreenHeaderBtn iconUrl={IMAGES.profile} size="100%" />
           ),
-          headerTitle: "",
+          headerTitle: '',
         }}
       />
 

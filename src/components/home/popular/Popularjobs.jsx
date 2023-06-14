@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { View, Text, TouchableOpacity, FlatList } from "react-native";
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 
-import styles from "src/components/home/popular/popularjobs.style";
-import PopularJobCard from "src/components/common/cards/popular/PopularJobCard";
+import styles from 'src/components/home/popular/popularjobs.style';
+import PopularJobCard from 'src/components/common/cards/popular/PopularJobCard';
 
 const Popularjobs = ({ jobs }) => {
   const [selectedJob, setSelectedJob] = useState();

@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { View, Text, TouchableOpacity, Image, Linking } from "react-native";
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Image, Linking } from 'react-native';
 
-import styles from "src/components/jobdetails/footer/footer.style";
-import { ICONS } from "src/constants";
+import styles from 'src/components/jobdetails/footer/footer.style';
+import { ICONS } from 'src/constants';
 
 const Footer = ({ url }) => {
   const [liked, setLiked] = useState(false);
@@ -19,8 +19,7 @@ const Footer = ({ url }) => {
 
       <TouchableOpacity
         style={styles.applyBtn}
-        onPress={() => Linking.openURL(url)}
-      >
+        onPress={() => Linking.openURL(url)}>
         <Text style={styles.applyBtnText}>Apply for job</Text>
       </TouchableOpacity>
     </View>
